@@ -6,8 +6,8 @@ function M = desired_model()
 
 %   Giulio Romualdi 
 
-T_settling = 1e-5; % second
-S = 0.5; % overshoot in %
+T_settling = 1e-4; % second
+S = 2; % overshoot in %
 a = log(100 / S);
 xi = sqrt(a^2 / (pi^2 + a^2)); % damping
 omega_n = - 1 / (T_settling * xi) * log(0.01 * 5); % natural frequency

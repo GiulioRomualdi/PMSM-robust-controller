@@ -16,9 +16,9 @@ K.y = 'u_c';
 K_reduced = reduce(K, 2);
 K_reduced.u = 'e_c';
 K_reduced.y = 'u_c';
-close_loop = connect(G_real, K_reduced, sum_c, sum_w, {'r'}, {'y'});
-step(close_loop);
+close_loop = connect(G_real, K, sum_c, sum_w, {'r'}, {'y'});
+step(close_loop, M);
 
 % Discretized the controller
 frequency = 20e3;
-discrete_controller = c2d(K_reduced, 1/frequency);
+discrete_controller = c2d(K, 1/frequency);
